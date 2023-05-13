@@ -1,0 +1,38 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+struct Person {
+- first_name : string
+- last_name : string
+
++ Person(first_name : string, last_name : string)
+
++ GetFullName() : string
+}
+
+struct Employee {
+- person : Person
+- position : string
+
++ Employee(person : Person, position : string)
++ Employee(first_name : string, last_name : string, position : string)
+
++ GetPerson() : Person
++ GetPosition() : string
+}
+Person <--* Employee
+
+struct Manager {
+- person : Person
+- employees : Employee[]
+
++ Manager(first_name : string, last_name : string)
+
++ AddEmployee(employee : Employee) : void
++ GetEmployees() : Employee[]
++ GetPerson() : Person
+}
+Person <--* Manager
+Employee <--* Manager
+
+@enduml
