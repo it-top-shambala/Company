@@ -3,4 +3,4 @@ project(Company)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Company main.cpp variant_one/Person.h variant_one/Employee.h variant_one/Manager.h)
+add_executable(Company main.cpp variant_one/Person.h variant_one/Employee.h variant_one/Manager.h variant_two/Person.h variant_two/Employee.h variant_two/Manager.h)

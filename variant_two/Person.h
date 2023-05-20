@@ -4,18 +4,18 @@
 
 using namespace std;
 
-namespace variant_one {
+namespace variant_two {
     class Person {
-    private:
+    protected:
         string first_name;
         string last_name;
 
-    public:
         Person(string first_name, string last_name) {
             this->first_name = first_name;
             this->last_name = last_name;
         }
 
+    public:
         string GetFullName() {
             return last_name + " " + first_name;
         }

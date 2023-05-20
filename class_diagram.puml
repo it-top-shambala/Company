@@ -37,4 +37,37 @@ Person <--* Manager
 Employee <--* Manager
 }
 
+package variant_two {
+struct Person {
+# first_name : string
+# last_name : string
+
+# Person(first_name : string, last_name : string)
+
++ GetFullName() : string
+}
+
+struct Employee {
+- position : string
+
++ Employee(first_name : string, last_name : string, position : string)
+
++ GetPerson() : Person
++ GetPosition() : string
+}
+Person <|-- Employee
+
+struct Manager {
+- employees : Employee[]
+
++ Manager(first_name : string, last_name : string)
+
++ AddEmployee(employee : Employee) : void
++ GetEmployees() : Employee[]
++ GetPerson() : Person
+}
+Person <|-- Manager
+Employee <--* Manager
+}
+
 @enduml

@@ -1,30 +1,27 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-package variant_one {
+package variant_two {
 struct Person {
-- first_name : string
-- last_name : string
+# first_name : string
+# last_name : string
 
-+ Person(first_name : string, last_name : string)
+# Person(first_name : string, last_name : string)
 
 + GetFullName() : string
 }
 
 struct Employee {
-- person : Person
 - position : string
 
-+ Employee(person : Person, position : string)
 + Employee(first_name : string, last_name : string, position : string)
 
 + GetPerson() : Person
 + GetPosition() : string
 }
-Person <--* Employee
+Person <|-- Employee
 
 struct Manager {
-- person : Person
 - employees : Employee[]
 
 + Manager(first_name : string, last_name : string)
@@ -33,7 +30,7 @@ struct Manager {
 + GetEmployees() : Employee[]
 + GetPerson() : Person
 }
-Person <--* Manager
+Person <|-- Manager
 Employee <--* Manager
 }
 

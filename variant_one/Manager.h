@@ -1,5 +1,4 @@
-#ifndef COMPANY_MANAGER_H
-#define COMPANY_MANAGER_H
+#pragma once
 
 #include <string>
 #include <vector>
@@ -9,27 +8,27 @@
 
 using namespace std;
 
-struct Manager {
-private:
-    Person* person;
-    vector<Employee*> employees;
+namespace variant_one {
+    class Manager {
+    private:
+        variant_one::Person* person;
+        vector<variant_one::Employee*> employees;
 
-public:
-    Manager(string first_name, string last_name) {
-        this->person = new Person(first_name, last_name);
-    }
+    public:
+        Manager(string first_name, string last_name) {
+            this->person = new variant_one::Person(first_name, last_name);
+        }
 
-    void AddEmployee(Employee* employee) {
-        employees.push_back(employee);
-    }
+        void AddEmployee(variant_one::Employee* employee) {
+            employees.push_back(employee);
+        }
 
-    Person* getPerson() const {
-        return person;
-    }
+        variant_one::Person* getPerson() const {
+            return person;
+        }
 
-    const vector<Employee *>& getEmployees() const {
-        return employees;
-    }
-};
-
-#endif //COMPANY_MANAGER_H
+        const vector<variant_one::Employee *>& getEmployees() const {
+            return employees;
+        }
+    };
+}
